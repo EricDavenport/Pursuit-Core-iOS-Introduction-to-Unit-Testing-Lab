@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		581961F52396165000F6BCFF /* officialJokeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581961F42396165000F6BCFF /* officialJokeData.swift */; };
 		5850F7A52395B92100DC0E92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5850F7A42395B92100DC0E92 /* AppDelegate.swift */; };
 		5850F7A72395B92100DC0E92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5850F7A62395B92100DC0E92 /* SceneDelegate.swift */; };
 		5850F7A92395B92100DC0E92 /* StarWarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5850F7A82395B92100DC0E92 /* StarWarsViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		581961F42396165000F6BCFF /* officialJokeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = officialJokeData.swift; sourceTree = "<group>"; };
 		5850F7A12395B92100DC0E92 /* UnitTestingLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitTestingLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5850F7A42395B92100DC0E92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5850F7A62395B92100DC0E92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				5850F7CC2395BA4600DC0E92 /* triviaAPI.json */,
 				5850F7CE2395BE0000DC0E92 /* TriviaViewController.swift */,
 				5850F7C62395B99D00DC0E92 /* officialJoke.json */,
+				581961F42396165000F6BCFF /* officialJokeData.swift */,
 				5850F7D02395BE1D00DC0E92 /* JokesViewController.swift */,
 				5850F7A42395B92100DC0E92 /* AppDelegate.swift */,
 				5850F7A62395B92100DC0E92 /* SceneDelegate.swift */,
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5850F7A92395B92100DC0E92 /* StarWarsViewController.swift in Sources */,
+				581961F52396165000F6BCFF /* officialJokeData.swift in Sources */,
 				5850F7A52395B92100DC0E92 /* AppDelegate.swift in Sources */,
 				5850F7D12395BE1D00DC0E92 /* JokesViewController.swift in Sources */,
 				5850F7A72395B92100DC0E92 /* SceneDelegate.swift in Sources */,
