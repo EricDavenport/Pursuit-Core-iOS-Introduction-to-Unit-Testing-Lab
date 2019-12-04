@@ -15,7 +15,7 @@ extension Bundle {
         }
         var data: Data!
         do {
-            data = try Data.init(contentsOf: fileURL)
+            data = try Data(contentsOf: fileURL)
             
         } catch {
             fatalError("contents not found eror \(error)")

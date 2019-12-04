@@ -55,7 +55,7 @@ class OfficialJokeTest: XCTestCase {
   func testFirstJokePunchline() {
     let firstJoke = getJokes().first
     let expectedPunchline = "You must first understand what recursion is"
-    let firstPunchline = firstJoke?.punchline
+    let firstPunchline = firstJoke?.punchline ?? ""
     
     XCTAssertEqual(expectedPunchline, firstPunchline, "\(firstPunchline) should match \(expectedPunchline)")
     
