@@ -10,21 +10,40 @@ import UIKit
 
 class JokesViewController: UIViewController {
 
+  @IBOutlet weak var tableview: UITableView!
+  
+  var jokes = [Joke]() {
+    didSet {
+      tableview.reloadData()
+    }
+  }
+  func loadData() {
+    jokes = Joke.getJokes()
+  }
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+      tableview.dataSource = self
+      loadData()
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension JokesViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "jokesCell", for: indexPath)
+    
+    let joke = jokes[indexPath.row]
+    
+    cell.textLabel?.text = joke.setup
+    cell.detailTextLabel?.text = "Joke ID: \(joke.id.description)"
+    
+    
+    return cell
+  }
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return jokes.count
+
+  }
+  }

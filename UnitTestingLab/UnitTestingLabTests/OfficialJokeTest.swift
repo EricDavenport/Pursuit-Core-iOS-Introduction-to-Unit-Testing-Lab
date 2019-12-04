@@ -71,7 +71,7 @@ extension OfficialJokeTest {
   
   func getJokes() -> [Joke] {
     let data = getData()
-    let jokes = Joke.getJokes(from: data)
+    let jokes = Joke.getJokes()
     return jokes
   }
 }

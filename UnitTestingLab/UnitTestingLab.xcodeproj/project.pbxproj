@@ -25,6 +25,7 @@
 		5850F7CD2395BA4600DC0E92 /* triviaAPI.json in Resources */ = {isa = PBXBuildFile; fileRef = 5850F7CC2395BA4600DC0E92 /* triviaAPI.json */; };
 		5850F7CF2395BE0000DC0E92 /* TriviaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5850F7CE2395BE0000DC0E92 /* TriviaViewController.swift */; };
 		5850F7D12395BE1D00DC0E92 /* JokesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5850F7D02395BE1D00DC0E92 /* JokesViewController.swift */; };
+		5895427F2398658B00164D1F /* JokesDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5895427E2398658B00164D1F /* JokesDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		5850F7CC2395BA4600DC0E92 /* triviaAPI.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = triviaAPI.json; sourceTree = "<group>"; };
 		5850F7CE2395BE0000DC0E92 /* TriviaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaViewController.swift; sourceTree = "<group>"; };
 		5850F7D02395BE1D00DC0E92 /* JokesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesViewController.swift; sourceTree = "<group>"; };
+		5895427E2398658B00164D1F /* JokesDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				5850F7C62395B99D00DC0E92 /* officialJoke.json */,
 				581961F42396165000F6BCFF /* OfficialJokeData.swift */,
 				5850F7D02395BE1D00DC0E92 /* JokesViewController.swift */,
+				5895427E2398658B00164D1F /* JokesDetailVC.swift */,
 				5850F7A42395B92100DC0E92 /* AppDelegate.swift */,
 				5850F7A62395B92100DC0E92 /* SceneDelegate.swift */,
 				5850F7AD2395B92300DC0E92 /* Assets.xcassets */,
@@ -238,6 +241,7 @@
 			files = (
 				5850F7A92395B92100DC0E92 /* StarWarsViewController.swift in Sources */,
 				581961F52396165000F6BCFF /* OfficialJokeData.swift in Sources */,
+				5895427F2398658B00164D1F /* JokesDetailVC.swift in Sources */,
 				5850F7A52395B92100DC0E92 /* AppDelegate.swift in Sources */,
 				5850F7D12395BE1D00DC0E92 /* JokesViewController.swift in Sources */,
 				5850F7A72395B92100DC0E92 /* SceneDelegate.swift in Sources */,

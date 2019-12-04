@@ -16,10 +16,14 @@ struct Joke: Decodable {
 }
 
 extension Joke {
-  static func getJokes(from data: Data) -> [Joke] {
+  static func getJokes() -> [Joke] {
     var jokes = [Joke]()
-    
+    guard let fileURL = Bundle.main.url(forResource: "officialJoke", withExtension: "json") else {
+      fatalError("failed to locate JSON file.")
+    }
     do {
+      let data = try Data(contentsOf: fileURL)
+      
       let officialJokesData = try JSONDecoder().decode([Joke].self, from: data)
       jokes = officialJokesData
     } catch {
@@ -27,7 +31,7 @@ extension Joke {
     }
     
     return jokes
-  }
+    }
   
   
 }
