@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="-642.1875"/>
         </scene>
-        <!--View Controller-->
+        <!--Jokes DetailVC-->
         <scene sceneID="ys8-Ro-rjK">
             <objects>
-                <viewController id="s1z-dx-bfu" sceneMemberID="viewController">
+                <viewController id="s1z-dx-bfu" customClass="JokesDetailVC" customModule="UnitTestingLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dCZ-jg-vLr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,6 +94,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xdV-hp-Iny"/>
                     </view>
+                    <connections>
+                        <outlet property="punchlineLabel" destination="OIy-dt-Rt5" id="8I4-vm-bBX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VHf-HG-zCM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

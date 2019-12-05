@@ -10,12 +10,19 @@ import UIKit
 
 class JokesDetailVC: UIViewController {
   
-  @IBOutlet weak var`
+  @IBOutlet weak var punchlineLabel: UILabel!
+  
+  var joke: Joke?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+      
+      updateUI()
     }
+  
+  func updateUI() {
+    punchlineLabel.text = joke?.punchline
+  }
     
 
 }

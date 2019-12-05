@@ -26,6 +26,16 @@ class JokesViewController: UIViewController {
       tableview.dataSource = self
       loadData()
     }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let jokesDetailVC = segue.destination as? JokesDetailVC,
+    let indexPath = tableview.indexPathForSelectedRow else {
+      
+      fatalError("failure to segue to JokesDetailVC")
+    }
+    
+    jokesDetailVC.joke = jokes[indexPath.row]
+  }
     
 
 }
