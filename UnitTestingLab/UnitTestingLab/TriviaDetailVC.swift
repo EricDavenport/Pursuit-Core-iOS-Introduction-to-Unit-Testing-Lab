@@ -13,10 +13,16 @@ class TriviaDetailVC: UIViewController {
   @IBOutlet weak var questionLabel: UILabel!
 
   
-  @IBOutlet var answerOptions: [UIButton]!
+  @IBOutlet weak var button0: UIButton!
+  @IBOutlet weak var button1: UIButton!
+  @IBOutlet weak var button2: UIButton!
+  @IBOutlet weak var button3: UIButton!
+  
   
   
   var trivia: Trivia?
+  
+  var incorrectAnswers = [String]()
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +31,13 @@ class TriviaDetailVC: UIViewController {
     
   func updateUI() {
     questionLabel.text = trivia?.question.removingPercentEncoding
-    
-    
+    incorrectAnswers = trivia!.incorrect_answers
+    button0.titleLabel?.text = incorrectAnswers[0]
+    button1.titleLabel?.text = trivia?.correct_answer
+    button2.titleLabel?.text = incorrectAnswers[1]
+    button3.titleLabel?.text = incorrectAnswers[2]
+
+ 
   }
 
 }
