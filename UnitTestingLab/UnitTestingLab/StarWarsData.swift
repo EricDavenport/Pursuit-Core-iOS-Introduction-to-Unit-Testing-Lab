@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct StarWarsFilms: Codable {
+struct StarWarsFilms: Decodable {
   let results: [Films]
 
 }
 
-struct Films: Codable {
+struct Films: Decodable {
   let title: String
   let episode_id: Int
   let opening_crawl: String
@@ -21,6 +21,12 @@ struct Films: Codable {
   let producer: String
   let release_date: String
   
+}
+
+enum CodingKeys: String, CodingKey {
+  case openingCrawl = "opening_crawl"
+  case releaseDate = "release_date"
+  case episodeID = "episode_id"
 }
 
 extension StarWarsFilms {

@@ -46,8 +46,8 @@ extension StarWarsTest {
   }
   
   func getFilms() -> [Films] {
-    let data = getData()
-    let films = StarWarsFilms.getData(from: data)
+    //let data = getData()
+    let films = StarWarsFilms.getData()
     return films
   }
 }

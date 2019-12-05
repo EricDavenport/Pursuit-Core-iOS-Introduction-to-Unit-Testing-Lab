@@ -9,22 +9,61 @@
 import UIKit
 
 class TriviaViewController: UIViewController {
+  
+  @IBOutlet weak var tableView: UITableView!
+  
+  var trivia = [[Trivia]]() {
+    didSet {
+      tableView.reloadData()
+    }
+  }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      loadData()
+      tableView.dataSource = self
+      dump(trivia)
 
-        // Do any additional setup after loading the view.
     }
+  func loadData() {
+    //let triviaList = TriviaData.getTrivia()
+    trivia = TriviaData.getSections()
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let triviaDetailVC = segue.destination as? TriviaDetailVC,
+      let indexPath = tableView.indexPathForSelectedRow else {
+        fatalError("Unable to deque cell")
+    }
+    triviaDetailVC.trivia = trivia[indexPath.section][indexPath.row]
+    
+  }
     
 
-    /*
-    // MARK: - Navigation
+    
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+extension TriviaViewController: UITableViewDataSource {
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "triviaCell", for: indexPath)
+    let myTrivia = trivia[indexPath.section][indexPath.row]
+    
+    cell.textLabel?.text = myTrivia.question.removingPercentEncoding
+    
+    return cell
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return trivia[section].count
+  }
+  
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return trivia.count
+  }
+  
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return trivia[section].first?.difficulty.uppercased()
+  }
+  
 }

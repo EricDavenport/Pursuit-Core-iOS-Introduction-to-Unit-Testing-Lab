@@ -23,7 +23,7 @@ struct Trivia: Codable {
 }
 
 extension TriviaData {
-  static func getTrivia(from data: Data) -> [Trivia] {
+  static func getTrivia() -> [Trivia] {
     var trivia = [Trivia]()
 //
 //    do {
@@ -47,4 +47,29 @@ extension TriviaData {
     return trivia
   
   }
+  
+  static func getSections() -> [[Trivia]] {
+    let trivia = TriviaData.getTrivia()
+    
+    let sortedTrivia = trivia.sorted { $0.difficulty < $1.difficulty }
+    
+    let difficulties: Set<String> = Set(trivia.map { $0.difficulty })
+    
+    var sectionArray = Array(repeating: [Trivia](), count: difficulties.count )
+    
+    var currentIndex = 0
+    var currentDifficulty = sortedTrivia.first?.difficulty ?? ""
+    for trivia in sortedTrivia {
+      if trivia.difficulty == currentDifficulty {
+        sectionArray[currentIndex].append(trivia)
+      } else {
+        currentIndex += 1
+        currentDifficulty = trivia.difficulty
+        sectionArray[currentIndex].append(trivia)
+      }
+    }
+    return sectionArray
+  }
 }
+
+

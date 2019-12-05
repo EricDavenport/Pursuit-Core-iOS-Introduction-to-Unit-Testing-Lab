@@ -28,6 +28,14 @@ class StarWarsViewController: UIViewController {
       tableView.dataSource = self
 
   }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let starWarsDetailVC = segue.destination as? StarWarsDetailVC, let indexPath = tableView.indexPathForSelectedRow else {
+      fatalError("Unable to seque properly.")
+    }
+    
+    starWarsDetailVC.currentFilm = starWarsMovies[indexPath.row]
+  }
 
 
 }

@@ -35,8 +35,8 @@ extension TriviaTest {
   }
   
   func getTriviaTest() -> [Trivia] {
-    let data = getData()
-    let trivia = TriviaData.getTrivia(from: data)
+    //let data = getData()
+    let trivia = TriviaData.getTrivia()
     return trivia
   }
 }
