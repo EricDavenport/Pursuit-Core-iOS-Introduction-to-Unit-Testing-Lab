@@ -18,6 +18,7 @@ struct Joke: Decodable {
 extension Joke {
   static func getJokes() -> [Joke] {
     var jokes = [Joke]()
+    
     guard let fileURL = Bundle.main.url(forResource: "officialJoke", withExtension: "json") else {
       fatalError("failed to locate JSON file.")
     }

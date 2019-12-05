@@ -24,10 +24,17 @@ struct Films: Codable {
 }
 
 extension StarWarsFilms {
-  static func getData(from data: Data) -> [Films] {
+  static func getData() -> [Films] {
     var film = [Films]()
     
+    guard let fileURL = Bundle.main.url(forResource: "starWarsFilms", withExtension: "json") else {
+      fatalError("failed to parse json")
+    }
+    
     do {
+      
+      let data = try Data(contentsOf: fileURL)
+      
       let starWarsFilmData = try JSONDecoder().decode(StarWarsFilms.self, from: data)
       film = starWarsFilmData.results
     } catch {
